@@ -118,7 +118,7 @@ function cyrillicToPhonetic(s) {
 
 
 var p2a = {
-    'а' : '\u064E',
+    'а' : 'اَ',
     'б' : 'ب',
     'б\'' : 'ب',
     'в' : 'و',
