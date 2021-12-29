@@ -184,7 +184,7 @@ function phoneticToArabic(phoneticText){
 	    p = p.substring(0, p.length-1);
 	    dbl = true;
 	}
-	if ((i==0 || !isWord(phoneticText[i-1][0]))&&(isVowel(phoneticText[i][0])&&phoneticText[i][0] != 'а')){
+	if ((i==0 || !isWord(phoneticText[i-1][0]))&&(isVowel(phoneticText[i][0])&&(phoneticText[i][0].toLowerCase() != 'а'))){
 	    result += '\u0627'; // Аліф, калі галосная на пачатку слова
 	}
 	if (p in p2a) {
