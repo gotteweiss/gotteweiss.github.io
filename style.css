@@ -86,6 +86,8 @@ textarea { border-color:#AAA; color:#444;}
 
 @media (min-width:1024px) {
     #blk-source { float:left; width:50%; padding-right:10px;}
+    #blk-source-ar { float:left; width:50%; padding-right:10px;}
     #blk-result { float:left; width:50%; padding-left:10px;}
-    #source-text, #result { height:200px; }
+    #blk-result-ar { float:left; width:50%; padding-left:10px;}
+    #source-text, #result, #source-text-ar, #result-ar { height:200px; }
 }
