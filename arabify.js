@@ -250,7 +250,7 @@ function arabicToPhonetic(arabicSourceText){
 	var result = '';
 	
 	for (var i=0; i<arabicSourceText.length; i++){
-	    var a = arabicText[i];
+	    var a = arabicSourceText[i];
 		
 		if (a in a2p) {
 			result += a2p[a];
