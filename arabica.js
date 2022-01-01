@@ -22,7 +22,7 @@ window.onload = function(){
 	arabicText = phoneticToArabic(p);
 	resultDiv.innerHTML = arabicText;
 	    
-	sourceArText = sourceArTextArea = sourceArTextArea.value;
+	sourceArText = sourceArTextArea.value;
 	cyrillicText = arabicToPhonetic(sourceArText);
 	resultArDiv.innerHTML = cyrillicText;
     };
