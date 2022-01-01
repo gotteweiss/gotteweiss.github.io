@@ -164,9 +164,49 @@ var p2a = {
     'э' : '\u064E',
 };
 
+var a2p = {
+	'\u064E' : 'а', // Фатха
+    'ب' : 'б',
+    'و' : 'в',
+    'ه' : 'г',
+    'د' : 'д',
+    'ج' : 'дж',
+    'ࢮ' : 'дз',
+    'ژ' : 'ж',
+    'ض' : 'з',
+    'ز' : 'зь',
+    '\u0650' : 'і', // Кесра
+    'ي' : 'й',    
+    'ق' : 'к',
+    'ك' : 'кь',        
+    'ل' : 'л',
+    'م' : 'м',
+    'ن' : 'н',
+    'پ' : 'п',
+    'ر' : 'р',
+    'ص' : 'с',
+    'ث' : 'сь',    
+    'ط' : 'т',
+    'ت' : 'ть', //TODO: wtf?
+    '\u064F' : 'у', // Дамма
+    'ف' : 'ф',
+    'ح' : 'х',
+    'ࢯ' : 'ц', 
+    'چ' : 'ч',
+    'ش' : 'ш',
+	'\u0627' : '', // Аліф
+	'\u0652' : '', //Сукун
+    '\u0651' : '2'; // Шадда, пазначае падваенне
+};
+
 var punct2a = {
     ',' : '\u060C',
     '?' : '\u061F',
+};
+
+var a2punct = {
+    '\u060C' : ',',
+    '\u061F' : '?',
 };
 
 function isWordLetter(s){
@@ -204,6 +244,24 @@ function phoneticToArabic(phoneticText){
 	}
     }
     return result;
+}
+
+function arabicToPhonetic(arabicSourceText){
+	var result = '';
+	
+	for (var i=0; i<arabicSourceText.length; i++){
+	    var a = arabicText[i];
+		
+		if (a in a2p) {
+			result += a2p[a];
+		}
+		else if (a in a2punct){
+			result += a2punct[a];
+		} else {
+			result += p;		 
+		}
+	}
+	return result;
 }
 
 function cyrillicToArabic(s) {
