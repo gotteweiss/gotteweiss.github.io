@@ -4,10 +4,14 @@ window.onload = function(){
     
     var phoneticResultDiv = document.getElementById('phonetic-result');
     var resultDiv = document.getElementById('result');
+    var resultArDiv = document.getElementById('result-ar');
     var sourceText = '';
     var arabicText = '';
+    var sourceArText = '';
+    var cyrillicText = '';
 
     var sourceTextArea = document.getElementById('source-text');
+    var sourceArTextArea = document.getElementById('source-text-ar');
 
 
     var updateText = function(){
@@ -17,11 +21,20 @@ window.onload = function(){
 	var p = cyrillicToPhonetic(sourceText);
 	arabicText = phoneticToArabic(p);
 	resultDiv.innerHTML = arabicText;
+	    
+	sourceArText = sourceArTextArea = sourceArTextArea.value;
+	cyrillicText = arabicToPhonetic(sourceArText);
+	resultArDiv.innerHTML = cyrillicText;
     };
     
     sourceTextArea.onkeyup = updateText;
     sourceTextArea.onfocus = function(){
 	sourceTextArea.select();
+    };
+	
+    sourceArTextArea.onkeyup = updateText;
+    sourceArTextArea.onfocus = function(){
+	sourceArTextArea.select();
     };
 
     resultDiv.onclick = function(){
@@ -31,9 +44,21 @@ window.onload = function(){
 	window.getSelection().removeAllRanges();
 	window.getSelection().addRange(range);
     }
+	
+    resultArDiv.onclick = function(){
+	var range = document.createRange();
+	range.setStart(resultArDiv, 0);
+	range.setEnd(resultArDiv, 1); 	
+	window.getSelection().removeAllRanges();
+	window.getSelection().addRange(range);
+    }
 
     document.getElementById('btn-copy').onclick = function(){
 	navigator.clipboard.writeText(arabicText);
+    };
+	
+    document.getElementById('btn-copy-ar').onclick = function(){
+	navigator.clipboard.writeText(cyrillicText);
     };
     
     updateText();
