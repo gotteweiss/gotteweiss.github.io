@@ -43,7 +43,7 @@ window.onload = function(){
 	range.setEnd(resultDiv, 1); 	
 	window.getSelection().removeAllRanges();
 	window.getSelection().addRange(range);
-    }
+    };
 	
     resultArDiv.onclick = function(){
 	var range = document.createRange();
@@ -51,7 +51,7 @@ window.onload = function(){
 	range.setEnd(resultArDiv, 1); 	
 	window.getSelection().removeAllRanges();
 	window.getSelection().addRange(range);
-    }
+    };
 
     document.getElementById('btn-copy').onclick = function(){
 	navigator.clipboard.writeText(arabicText);
