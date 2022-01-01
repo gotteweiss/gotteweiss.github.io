@@ -64,8 +64,18 @@ p, .label-p { line-height:1.2; }
 
 textarea { border-color:#AAA; color:#444;}
 #source-text { width:100%; max-width:100%; text-align:center; font-size:18px;}
+#source-text-ar { width:100%; max-width:100%; text-align:center; font-size:18px;}
 
 #result { border:1px solid #AAA;
+	  padding:10px;
+	  font-size:24px;
+	  direction:rtl;
+	  text-align:center;
+	  white-space:pre-wrap;
+	  font-family:'Noto Sans Arabic', Arial, sans-serif;
+	}
+
+#result-ar { border:1px solid #AAA;
 	  padding:10px;
 	  font-size:24px;
 	  direction:rtl;
