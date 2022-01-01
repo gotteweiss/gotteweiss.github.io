@@ -258,7 +258,7 @@ function arabicToPhonetic(arabicSourceText){
 		else if (a in a2punct){
 			result += a2punct[a];
 		} else {
-			result += p;		 
+			result += a;		 
 		}
 	}
 	return result;
